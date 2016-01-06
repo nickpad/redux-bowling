@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default React.createClass({
+export default class Frame extends React.Component {
   render() {
     return <div className='frame'>
       <div className="throws">
@@ -10,4 +10,4 @@ export default React.createClass({
       <div className="total">10</div>
     </div>
   }
-});
+}
