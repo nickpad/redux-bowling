@@ -1,0 +1,20 @@
+.frames {
+  display: flex;
+}
+
+.frame {
+  flex-grow: 1;
+  border: 1px solid black;
+}
+
+.throws {
+  display: flex;
+}
+
+.throw {
+  flex-grow: 1;
+  border: 1px solid blue;
+}
+
+.total {
+}
