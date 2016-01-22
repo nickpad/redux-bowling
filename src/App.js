@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 import times from 'lodash/utility/times';
-import Frame from './frame'
+import Frame from './frame';
 
-export default React.createClass({
+export default class App extends React.Component {
   render() {
-    return <div className='app'>
-      <div className='frames'>
-        {times(9, i => <Frame/>)}
+    return (<div className="app">
+      <div className="frames">
+        {times(9, () => <Frame/>)}
       </div>
-    </div>
+    </div>);
   }
-});
+}
