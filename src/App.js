@@ -1,19 +1,9 @@
 import React from 'react';
 import times from 'lodash/utility/times';
+import Frame from './Frame';
+import PinOption from './PinOption';
 
 export default class App extends React.Component {
-  frame() {
-    return (
-      <div className="frame">
-        <div className="throws">
-          <div className="throw first"></div>
-          <div className="throw second"></div>
-        </div>
-        <div className="total"></div>
-      </div>
-    );
-  }
-
   finalFrame() {
     return (
       <div className="frame final-frame">
@@ -28,9 +18,15 @@ export default class App extends React.Component {
   }
 
   pinOption(number) {
-    return (
-      <a className="pins-option">{number}</a>
-    );
+    let element;
+
+    if (number > this.props.pinsLeft) {
+      element = <span key={number} className="disabled">{number}</span>;
+    } else {
+      element = <a key={number} className="pin-option">{number}</a>;
+    }
+
+    return element;
   }
 
   render() {
@@ -42,14 +38,18 @@ export default class App extends React.Component {
         </header>
         <h2>Scoreboard</h2>
         <div className="frames">
-          {times(10, () => this.frame())}
+          {times(10, (i) => <Frame key={i} />)}
           {this.finalFrame()}
         </div>
         <h2>Number of pins</h2>
         <div className="scoring">
-          {times(10, (i) => this.pinOption(i + 1))}
+          {times(10, (i) => <PinOption key={i} number={i + 1} pinsLeft={10} />)}
         </div>
       </div>
     );
   }
 }
+
+App.propTypes = {
+  pinsLeft: React.PropTypes.number.isRequired,
+};

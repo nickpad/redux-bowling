@@ -14,7 +14,7 @@ const element = document.querySelector('#app');
 
 render(
   <Provider store={store}>
-    <App />
+    <App pinsLeft={10}/>
   </Provider>,
   element
 );
