@@ -1,10 +1,42 @@
+$throwHeight: 2.5em;
+
+.app {
+  margin: auto;
+  max-width: 1024px;
+  min-width: 960px;
+}
+
+header {
+  display: flex;
+  line-height: 2em;
+
+  h1 {
+    flex-grow: 4;
+    font-size: 1.5em;
+  }
+
+  .new-game {
+    border: 1px solid #ccc;
+    flex-basis: 12em;
+    line-height: 2.5em;
+    margin: 0.75em 0;
+    text-align: center;
+  }
+}
+
+h2 {
+  font-size: 1.1em;
+}
+
 .frames {
   display: flex;
 }
 
 .frame {
+  border: 1px solid #000;
   flex-grow: 1;
-  border: 1px solid black;
+  line-height: $throwHeight;
+  text-align: center;
 }
 
 .throws {
@@ -13,8 +45,26 @@
 
 .throw {
   flex-grow: 1;
-  border: 1px solid blue;
+  height: $throwHeight;
+
+  &.second, &.third {
+    border-color: #333;
+    border-style: solid;
+    border-width: 0 0 1px 1px;
+  }
 }
 
 .total {
+  height: 2.5em;
+}
+
+.scoring {
+  display: flex;
+
+  .pins-option {
+    border: 1px solid #ccc;
+    flex-grow: 1;
+    padding: 1em;
+    text-align: center;
+  }
 }
