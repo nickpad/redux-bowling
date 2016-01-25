@@ -1,7 +1,7 @@
 import React from 'react';
 import times from 'lodash/utility/times';
-import Frame from './Frame';
-import PinOption from './PinOption';
+import Frame from '../components/Frame';
+import PinOption from '../components/PinOption';
 
 export default class App extends React.Component {
   finalFrame() {
