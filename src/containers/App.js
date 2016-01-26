@@ -1,5 +1,5 @@
 import React from 'react';
-import times from 'lodash/utility/times';
+import times from 'lodash/times';
 import Frame from '../components/Frame';
 import PinOption from '../components/PinOption';
 
